@@ -1,6 +1,5 @@
 import classNames from "../../../utils/classNames";
 
-// eslint-disable-next-line react/prop-types
 export default function Title({ children, className }) {
   return (
     <h1

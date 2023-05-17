@@ -1,9 +1,12 @@
-import Title from "../Title/Title";
+import classNames from "../../../../utils/classNames";
+import SectionHeader from "../../../components/SectionHeader/SectionHeader";
 
-export default function Map() {
+export default function Map({ className }) {
   return (
-    <div className="w-full shadow-lg px-6 md:px-10 pb-10 pt-2">
-      <Title className="mb-6">Location</Title>
+    <div
+      className={classNames(className, "shadow-lg px-6 md:px-10 pb-10 pt-4")}
+    >
+      <SectionHeader className="mb-6">Location</SectionHeader>
       <p className="font-bold mb-4 text-gray-800 mt-2 ">
         We are located at Gorkha FM Chowk, Kathmandu 44600
       </p>
