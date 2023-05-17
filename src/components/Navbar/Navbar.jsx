@@ -7,10 +7,10 @@ export default function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   return (
     <nav
-      className="flex justify-center gap-x-6 md:gap-x-16 font-bold text-lg md:text-xl cursor-pointer
-    bg-blue-500 py-8 text-white"
+      className="relative flex justify-center gap-x-6 md:gap-x-16 font-bold text-lg 
+      md:text-xl cursor-pointer py-8 text-white"
     >
-      <div className="flex  gap-x-6 md:gap-x-16 overflow-x-hidden">
+      <div className="flex gap-x-6 md:gap-x-16 overflow-x-hidden">
         <a>Home</a>
         <a>About</a>
         <a>Projects</a>
