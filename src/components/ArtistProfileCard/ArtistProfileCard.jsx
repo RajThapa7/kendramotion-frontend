@@ -5,7 +5,7 @@ export default function ArtistProfileCard() {
     <div className="flex items-center gap-x-10">
       <Avatar />
       <div className="flex flex-col gap-y-3">
-        <h1 className="font-bold text-2xl md:text-3xl text-gray-900">
+        <h1 className="font-bold text-xl md:text-2xl text-gray-900">
           Subash Neupane
         </h1>
         <p>

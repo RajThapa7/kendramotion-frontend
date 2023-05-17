@@ -1,5 +1,4 @@
-// import image from "public/placeholder.png";
-import image from "../../../public/placeholder.png";
+import image from "../../assets/placeholder.png";
 
 export default function Avatar() {
   return (
