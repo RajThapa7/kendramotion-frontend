@@ -2,51 +2,44 @@ import VideoCard from "../VideoCard/VideoCard";
 
 const cardData = [
   {
-    id: 1,
     title: "Babari Sad Version",
     date: "2023",
-    videoURL: "https://www.youtube.com/watch?v=qkIqjh-kCjg",
-    thumbnailURL: "https://img.youtube.com/vi/qkIqjh-kCjg/0.jpg",
+    videoId: "qkIqjh-kCjg",
+    /* videoURL: "https://www.youtube.com/watch?v=qkIqjh-kCjg",
+    thumbnailURL: "https://img.youtube.com/vi/qkIqjh-kCjg/0.jpg", */
   },
   {
-    id: 2,
     title: "Babari Sad Version",
     date: "2023",
-    videoURL: "https://www.youtube.com/watch?v=qkIqjh-kCjg",
-    thumbnailURL: "https://img.youtube.com/vi/qkIqjh-kCjg/0.jpg",
+    videoId: "qkIqjh-kCjg",
   },
   {
-    id: 3,
     title: "Babari Sad Version",
     date: "2023",
-    videoURL: "https://www.youtube.com/watch?v=qkIqjh-kCjg",
-    thumbnailURL: "https://img.youtube.com/vi/qkIqjh-kCjg/0.jpg",
+    videoId: "qkIqjh-kCjg",
   },
   {
-    id: 4,
     title: "Babari Sad Version",
     date: "2023",
-    videoURL: "https://www.youtube.com/watch?v=qkIqjh-kCjg",
-    thumbnailURL: "https://img.youtube.com/vi/qkIqjh-kCjg/0.jpg",
+    videoId: "qkIqjh-kCjg",
   },
   {
-    id: 5,
     title: "Babari Sad Version",
     date: "2023",
-    videoURL: "https://www.youtube.com/watch?v=qkIqjh-kCjg",
-    thumbnailURL: "https://img.youtube.com/vi/qkIqjh-kCjg/0.jpg",
+    videoId: "qkIqjh-kCjg",
   },
 ];
 
-export default function VideoCards() {
+export default function VideoCards({ onClick }) {
   return (
     <div className="flex flex-wrap -mx-10 gap-y-5">
       {cardData.map((item) => (
         <VideoCard
-          key={item.key}
+          key={item.videoId}
           title={item.title}
-          thumbnailURL={item.thumbnailURL}
+          videoId={item.videoId}
           date={item.date}
+          onClick={() => onClick(item.videoId)}
         />
       ))}
     </div>
