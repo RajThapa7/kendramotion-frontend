@@ -2,7 +2,7 @@
 // eslint-disable-next-line react/prop-types
 export default function SocialLinks({ data }) {
   return (
-    <div className="inline-flex gap-x-6 w-fit">
+    <div className="inline-flex gap-x-6 w-full justify-center">
       {data.map(({ img, link, id }) => (
         <a href={link} target="_blank" key={id} rel="noreferrer">
           <div className="object-contain w-12 rounded-full shadow-lg shadow-gray-400">
