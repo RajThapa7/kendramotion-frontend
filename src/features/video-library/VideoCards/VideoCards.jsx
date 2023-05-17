@@ -40,7 +40,7 @@ const cardData = [
 
 export default function VideoCards() {
   return (
-    <div className="flex gap-8 flex-wrap">
+    <div className="flex flex-wrap -mx-10 gap-y-5">
       {cardData.map((item) => (
         <VideoCard
           key={item.key}
