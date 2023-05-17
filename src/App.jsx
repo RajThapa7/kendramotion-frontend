@@ -1,10 +1,12 @@
 import "./App.css";
+import VideoLibrary from "./features/video-library/VideoLibrary/VideoLibrary";
+import AppLayout from "./layouts/AppLayout/AppLayout";
 
 function App() {
   return (
-    <>
-      <p className="font-bold text-red-500 text-5xl">hello world</p>
-    </>
+    <AppLayout>
+      <VideoLibrary />
+    </AppLayout>
   );
 }
 
