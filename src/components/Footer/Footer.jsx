@@ -1,6 +1,9 @@
 export default function Footer() {
   return (
-    <footer aria-label="Site Footer" className="bg-[#010d21]">
+    <footer
+      aria-label="Site Footer"
+      className="bg-[#010d21] w-[100vw] ml-[calc(50%-50vw)]"
+    >
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between text-white">
           <div className="flex flex-col gap-y-2 items-center md:flex-row gap-x-8">

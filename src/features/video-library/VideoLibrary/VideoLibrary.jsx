@@ -9,7 +9,7 @@ export default function VideoLibrary() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
-    <div>
+    <div className="mb-10">
       <MyModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)}>
         <VideoPlayer videoId={selectedVideo} />
       </MyModal>
@@ -20,7 +20,7 @@ export default function VideoLibrary() {
           setSelectedVideo(id);
         }}
       />
-      <div className="mt-10 flex justify-center">
+      <div className="mt-5 flex justify-center">
         <Button>View More</Button>
       </div>
     </div>
