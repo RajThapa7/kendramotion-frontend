@@ -1,6 +1,6 @@
 export default function MovieCard({ title, videoId }) {
   return (
-    <div className="w-full sm:w-[400px] shrink-0 mb-5">
+    <div className="px-1">
       <img
         src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
         alt="movie thumbnail"
