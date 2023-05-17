@@ -4,7 +4,7 @@ import { BiChevronDown } from "react-icons/bi";
 export default function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   return (
-    <div className="flex justify-center bg-blue-500 z-0 font-bold text-lg md:text-xl gap-x-6 md:gap-x-16 text-white py-8 cursor-pointer">
+    <div className="flex overflow-x-hidden justify-center bg-blue-500 z-0 font-bold text-lg md:text-xl gap-x-6 md:gap-x-16 text-white py-8 cursor-pointer">
       <div className="flex  gap-x-6 md:gap-x-16 overflow-x-hidden">
         <>Home</>
         <a>About</a>
