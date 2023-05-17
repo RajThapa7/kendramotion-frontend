@@ -37,13 +37,15 @@ const DropdownMenu = ({ className }) => {
     <div
       className={classNames(
         className,
-        `flex flex-col items-center bg-red-500 py-4 px-3 gap-y-2 `
+        `flex flex-col items-center py-6 px-7 rounded-md gap-y-4 bg-black bg-opacity-20`
       )}
     >
       <a href="#" className="transition-smooth hover:translate-x-4">
         Gallery1
       </a>
-      <a href="#">Gallery1</a>
+      <a href="#" className="transition-smooth hover:translate-x-4">
+        Gallery1
+      </a>
     </div>
   );
 };

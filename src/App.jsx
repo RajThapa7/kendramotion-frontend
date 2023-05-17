@@ -4,7 +4,7 @@ import Footer from "./components/Footer/Footer";
 import HeroSection from "./features/hero-section/HeroSection/HeroSection";
 // import AudioLibrary from "./features/audio-library/AudioLibrary/AudioLibrary";
 import MovieLibrary from "./features/movies-library/MovieLibrary/MovieLibrary";
-import LocationFeedback from "./features/location&feedback/LocationFeedback/LocationFeedback";
+import FeedbackAndMapSection from "./features/feedback-and-map/FeedbackAndMapSection/FeedbackAndMapSection";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       {/* <AudioLibrary /> */}
       <MovieLibrary />
       <div className="border-b border-black w-full mb-10" /> {/* Divider */}
-      <LocationFeedback />
+      <FeedbackAndMapSection />
       <Footer />
     </AppLayout>
   );
