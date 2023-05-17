@@ -1,35 +1,45 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
+import classNames from "../../../utils/classNames";
 import { BiChevronDown } from "react-icons/bi";
 
 export default function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   return (
-    <div className="flex overflow-x-hidden justify-center bg-blue-500 z-0 font-bold text-lg md:text-xl gap-x-6 md:gap-x-16 text-white py-8 cursor-pointer">
+    <nav
+      className="flex justify-center gap-x-6 md:gap-x-16 font-bold text-lg md:text-xl cursor-pointer
+    bg-blue-500 py-8 text-white"
+    >
       <div className="flex  gap-x-6 md:gap-x-16 overflow-x-hidden">
-        <>Home</>
+        <a>Home</a>
         <a>About</a>
         <a>Projects</a>
       </div>
-      <div className="relative">
-        <div
-          onClick={() => setDropdown((prev) => !prev)}
-          className="flex items-center"
-        >
-          <a>Contact</a>
-          <BiChevronDown
-            size={25}
-            className={`${dropdown ? "rotate-180" : ""} transition-smooth`}
-          />
-        </div>
-        {dropdown && <DropdownMenu />}
+      <div
+        onClick={() => setDropdown((prev) => !prev)}
+        className="flex items-center relative"
+      >
+        <a>Contact</a>
+        <BiChevronDown
+          size={25}
+          className={`${
+            dropdown ? "rotate-180" : "rotate-0"
+          } transition-smooth`}
+        />
+        {dropdown && <DropdownMenu className="absolute top-8 right-0" />}
       </div>
-    </div>
+    </nav>
   );
 }
 
-const DropdownMenu = () => {
+const DropdownMenu = ({ className }) => {
   return (
-    <div className="flex flex-col items-center absolute right-0 bg-red-500 z-20 top-10 py-4 px-3 gap-y-2 ">
+    <div
+      className={classNames(
+        className,
+        `flex flex-col items-center bg-red-500 py-4 px-3 gap-y-2 `
+      )}
+    >
       <a href="#" className="transition-smooth hover:translate-x-4">
         Gallery1
       </a>
