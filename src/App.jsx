@@ -5,16 +5,11 @@ import HeroSection from "./features/hero-section/HeroSection/HeroSection";
 import AudioLibrary from "./features/audio-library/AudioLibrary/AudioLibrary";
 import MovieLibrary from "./features/movies-library/MovieLibrary/MovieLibrary";
 import FeedbackAndMapSection from "./features/feedback-and-map/FeedbackAndMapSection/FeedbackAndMapSection";
-import ArtistProfileSection from "./features/ArtistProfileSection/ArtistProfileSection";
-import LatestWorkSection from "./features/LatestWorkSection/LatestWorkSection";
-import WantToBeNext from "./features/WantToBeNextSection/WantToBeNext";
 
 function App() {
   return (
     <AppLayout>
       <HeroSection />
-      <LatestWorkSection />
-      <ArtistProfileSection />
       <VideoLibrary />
       <AudioLibrary />
       <WantToBeNext />
