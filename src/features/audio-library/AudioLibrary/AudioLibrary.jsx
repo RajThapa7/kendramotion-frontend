@@ -1,11 +1,98 @@
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import SectionHeader from "../../../components/SectionHeader/SectionHeader";
-import AudioCards from "../AudioCards/AudioCards";
+import SpotifyCard from "../SpotifyCard/SpotifyCard";
+import { HiMusicNote } from "react-icons/hi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
+const audioLinks = [
+  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
+  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
+  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
+  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
+  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
+];
 
 export default function AudioLibrary() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />,
+    responsive: [
+      {
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1380,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div>
-      <SectionHeader>Audio Library</SectionHeader>
-      <AudioCards />
+    <div className="mb-28">
+      <SectionHeader className="mb-5">Audio Library</SectionHeader>
+      <div className="relative">
+        <div className="hidden lg:block absolute top-10 bg-[#1ed760] h-[300px] rounded-3xl w-[630px]" />
+        <div className="hidden lg:flex absolute left-10 top-[calc(2.5rem+50%)] text-3xl font-bold flex-col gap-2 -translate-y-[50%]">
+          <span>Popular</span>
+          <div className="flex items-center gap-x-2">
+            <HiMusicNote />
+            <span className="uppercase border-2 border-black inline-block text-4xl px-2">
+              Music
+            </span>
+          </div>
+          <span>Today</span>
+        </div>
+        <Slider {...settings} className="lg:ml-[300px] z-10">
+          {audioLinks.map((link, index) => (
+            <SpotifyCard key={index} link={link} />
+          ))}
+        </Slider>
+      </div>
     </div>
+  );
+}
+
+function RightArrow(props) {
+  return (
+    <button
+      className="absolute -right-2 top-[45%] z-10 -translate-y-[50%] rounded-full 
+      bg-gray-200 p-1 shadow-md transition-colors hover:bg-gray-300"
+      onClick={props.onClick}
+    >
+      <BiChevronRight size={25} />
+    </button>
+  );
+}
+
+function LeftArrow(props) {
+  return (
+    <button
+      className="absolute -left-2 top-[45%] z-10 -translate-y-[50%] rounded-full 
+      bg-gray-200 p-1 shadow-md transition-colors hover:bg-gray-300"
+      onClick={props.onClick}
+    >
+      <BiChevronLeft size={25} />
+    </button>
   );
 }
