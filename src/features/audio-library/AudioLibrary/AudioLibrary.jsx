@@ -14,42 +14,42 @@ const audioLinks = [
   "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
 ];
 
-export default function AudioLibrary() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    nextArrow: <RightArrow />,
-    prevArrow: <LeftArrow />,
-    responsive: [
-      {
-        breakpoint: 560,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 2,
+  nextArrow: <RightArrow />,
+  prevArrow: <LeftArrow />,
+  responsive: [
+    {
+      breakpoint: 560,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
       },
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
+    },
+    {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
       },
-      {
-        breakpoint: 1380,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
+    },
+    {
+      breakpoint: 1380,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
       },
-    ],
-  };
+    },
+  ],
+};
 
+export default function AudioLibrary() {
   return (
-    <div className="mb-28">
+    <div className="mb-16 lg:mb-28">
       <SectionHeader className="mb-5">Audio Library</SectionHeader>
       <div className="relative">
         <div className="hidden lg:block absolute top-10 bg-[#1ed760] h-[300px] rounded-3xl w-[630px]" />
