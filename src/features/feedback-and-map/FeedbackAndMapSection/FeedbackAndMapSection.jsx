@@ -1,6 +1,6 @@
 import Feedback from "../Feedback/Feedback";
 import SocialLinks from "../SocialIcons/SocialIcons";
-import facebook from "../../../assets/facebook.png";
+import facebook from "../../../assets/facebook.webp";
 import instagram from "../../../assets/insta.png";
 import youtube from "../../../assets/youtube.png";
 import Map from "../Map/Map";
