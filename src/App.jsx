@@ -5,6 +5,7 @@ import HeroSection from "./features/hero-section/HeroSection/HeroSection";
 import AudioLibrary from "./features/audio-library/AudioLibrary/AudioLibrary";
 import MovieLibrary from "./features/movies-library/MovieLibrary/MovieLibrary";
 import FeedbackAndMapSection from "./features/feedback-and-map/FeedbackAndMapSection/FeedbackAndMapSection";
+import WantToBeNext from "./features/WantToBeNextSection/WantToBeNext";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <HeroSection />
       <VideoLibrary />
       <AudioLibrary />
+      <WantToBeNext />
       <MovieLibrary />
       <div className="border-b border-black w-full mb-10" /> {/* Divider */}
       <FeedbackAndMapSection />

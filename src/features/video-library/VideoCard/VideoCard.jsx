@@ -9,8 +9,8 @@ export default function VideoCard({ title, videoId, date, onClick }) {
         alt={title}
         className="rounded-2xl group-hover:opacity-80 shadow-md aspect-[5/3] w-full object-cover duration-150"
       />
-      <p className="text-center text-xl font-medium">{title}</p>
-      <p className="text-center text-lg font-medium">{date}</p>
+      <p className="text-center text-2xl font-bold">{title}</p>
+      <p className="text-center text-xl font-bold">{date}</p>
     </div>
   );
 }
