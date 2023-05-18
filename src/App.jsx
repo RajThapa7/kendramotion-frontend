@@ -6,11 +6,13 @@ import HeroSection from "./features/hero-section/HeroSection/HeroSection";
 import MovieLibrary from "./features/movies-library/MovieLibrary/MovieLibrary";
 import FeedbackAndMapSection from "./features/feedback-and-map/FeedbackAndMapSection/FeedbackAndMapSection";
 import ArtistProfileSection from "./features/ArtistProfileSection/ArtistProfileSection";
+import LatestWorkSection from "./features/LatestWorkSection/LatestWorkSection";
 
 function App() {
   return (
     <AppLayout>
       <HeroSection />
+      <LatestWorkSection />
       <ArtistProfileSection />
       <VideoLibrary />
       {/* <AudioLibrary /> */}
