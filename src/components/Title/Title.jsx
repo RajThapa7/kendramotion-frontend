@@ -1,6 +1,6 @@
 import classNames from "../../../utils/classNames";
 
-export default function Title({ children, className }) {
+export default function Title({ children, className = "" }) {
   return (
     <h1
       className={classNames(
