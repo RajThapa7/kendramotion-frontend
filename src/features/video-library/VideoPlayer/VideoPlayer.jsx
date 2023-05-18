@@ -6,9 +6,9 @@
 }
 export default function VideoPlayer({ videoId }) {
   return (
-    <div className="bg-white w-[95vw] sm:w-[80vw] pt-[56.25%] max-w-4xl">
+    <div className="bg-white rounded-md w-[95vw] sm:w-[80vw] pt-[56.25%] max-w-4xl">
       <iframe
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full rounded-md"
         src={`https://www.youtube.com/embed/${videoId}`}
       ></iframe>
     </div>
