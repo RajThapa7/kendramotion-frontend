@@ -12,6 +12,7 @@ function App() {
       <HeroSection />
       <VideoLibrary />
       <AudioLibrary />
+      <WantToBeNext />
       <MovieLibrary />
       <div className="border-b border-black w-full mb-10" /> {/* Divider */}
       <FeedbackAndMapSection />
