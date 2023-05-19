@@ -24,7 +24,8 @@ function App() {
   const imgLink = [roadblock, roadblock2];
 
   //close modal and increment the current roadblock index by one
-  const closeModal = () => {
+  const closeModal = (e) => {
+    e.stopPropagation();
     setCurrentRoadblock(currentRoadblock + 1);
   };
 
@@ -36,7 +37,7 @@ function App() {
           <Roadblock
             key={index}
             isOpen={currentRoadblock === index}
-            closeModal={() => closeModal()}
+            closeModal={(e) => closeModal(e)}
             imgLink={img}
           />
         ))}
