@@ -1,4 +1,5 @@
 import VideoLibrary from "./features/video-library/VideoLibrary/VideoLibrary";
+import Carousel from "./features/Carousel/Carousel";
 import AppLayout from "./layouts/AppLayout/AppLayout";
 import Footer from "./components/Footer/Footer";
 import HeroSection from "./features/hero-section/HeroSection/HeroSection";
@@ -41,6 +42,7 @@ function App() {
         ))}
       {/* roadblock  */}
       <HeroSection />
+      <Carousel />
       <LatestWorkSection />
       <VideoLibrary />
       <AudioLibrary />
