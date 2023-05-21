@@ -5,49 +5,50 @@ import SectionHeader from "../../../components/SectionHeader/SectionHeader";
 import SpotifyCard from "../SpotifyCard/SpotifyCard";
 import { HiMusicNote } from "react-icons/hi";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-
-const audioLinks = [
-  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
-  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
-  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
-  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
-  "https://open.spotify.com/track/7ycWLEP1GsNjVvcjawXz3z",
-];
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 2,
-  nextArrow: <RightArrow />,
-  prevArrow: <LeftArrow />,
-  responsive: [
-    {
-      breakpoint: 560,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 1280,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 1380,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-};
+import useFetchAudios from "../api/useFetchAudios";
 
 export default function AudioLibrary() {
+  const audioQuery = useFetchAudios();
+
+  if (audioQuery.isLoading) return <p>Loading...</p>;
+
+  const numAudios = audioQuery.data.length;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: numAudios < 4 ? numAudios : 4,
+    slidesToScroll: 2,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />,
+    responsive: [
+      {
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: numAudios < 2 ? numAudios : 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1380,
+        settings: {
+          slidesToShow: numAudios < 3 ? numAudios : 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  console.log("AUDIO", audioQuery.data);
+
   return (
     <div className="mb-16 lg:mb-28">
       <SectionHeader className="mb-5">Audio Library</SectionHeader>
@@ -64,8 +65,8 @@ export default function AudioLibrary() {
           <span>Today</span>
         </div>
         <Slider {...settings} className="lg:ml-[300px] z-10">
-          {audioLinks.map((link, index) => (
-            <SpotifyCard key={index} link={link} />
+          {audioQuery.data.map((item) => (
+            <SpotifyCard key={item._id} link={item.url} />
           ))}
         </Slider>
       </div>
