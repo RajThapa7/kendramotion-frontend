@@ -1,8 +1,8 @@
-export default function MovieCard({ title, videoId }) {
+export default function MovieCard({ title, url }) {
   return (
     <div className="px-1">
       <img
-        src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
+        src={url}
         alt="movie thumbnail"
         className="w-full aspect-[16/9] mb-2 rounded-2xl object-cover"
       />
