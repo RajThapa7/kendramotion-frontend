@@ -1,4 +1,3 @@
-import React from "react";
 import Title from "../../components/Title/Title";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import LatestWorkSlider from "../../components/LatestWorkSlider/LatestWorkSlider";

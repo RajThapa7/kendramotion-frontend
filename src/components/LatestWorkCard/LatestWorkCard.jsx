@@ -1,13 +1,14 @@
 import classNames from "../../utils/classNames";
 
 export default function LatestWorkCard({
-  videoId,
+  url,
   title,
-  description,
   setSelectedVideo,
   setIsModalOpen,
   className,
 }) {
+  const videoId = url.split("v=")[1];
+
   return (
     <div
       href="#"
@@ -26,7 +27,7 @@ export default function LatestWorkCard({
 
       <div className="relative bg-white py-2 flex flex-col items-center gap-y-1">
         <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-        <p>{description}</p>
+        {/* <p>{description}</p> */}
       </div>
     </div>
   );
