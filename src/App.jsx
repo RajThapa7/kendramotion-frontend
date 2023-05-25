@@ -7,11 +7,11 @@ import AudioLibrary from "./features/audio-library/AudioLibrary/AudioLibrary";
 import MovieLibrary from "./features/movies-library/MovieLibrary/MovieLibrary";
 import FeedbackAndMapSection from "./features/feedback-and-map/FeedbackAndMapSection/FeedbackAndMapSection";
 import LatestWorkSection from "./features/LatestWorkSection/LatestWorkSection";
-import WantToBeNextSection from "./features/WantToBeNextSection/WantToBeNext";
 import Roadblock from "./features/roadblock/roadblock";
 import useSessionStorage from "../hooks/useSessionStorage";
 import roadblock2 from "./assets/ad.jpg";
 import roadblock from "./assets/roadblock.webp";
+import WantToBeNext from "./features/video-submission/WantToBeNext/WantToBeNext";
 
 function App() {
   //we can set multiple roadblocks and track them based on index
@@ -47,7 +47,7 @@ function App() {
       <LatestWorkSection />
       <VideoLibrary />
       <AudioLibrary />
-      <WantToBeNextSection />
+      <WantToBeNext />
       <MovieLibrary />
       <div className="border-b border-black w-full mb-10" /> {/* Divider */}
       <FeedbackAndMapSection />

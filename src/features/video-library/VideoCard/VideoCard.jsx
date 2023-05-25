@@ -1,4 +1,7 @@
-export default function VideoCard({ title, videoId, date, onClick }) {
+export default function VideoCard({ title, url, date, onClick }) {
+  // extract the video id from the url
+  const videoId = url.split("v=")[1];
+
   return (
     <div
       onClick={() => onClick(videoId)}
@@ -7,10 +10,10 @@ export default function VideoCard({ title, videoId, date, onClick }) {
       <img
         src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
         alt={title}
-        className="rounded-2xl group-hover:opacity-80 shadow-md aspect-[5/3] w-full object-cover duration-150"
+        className="mb-3 rounded-2xl group-hover:opacity-80 shadow-md aspect-[5/3] w-full object-cover duration-150"
       />
-      <p className="text-center text-2xl font-bold">{title}</p>
-      <p className="text-center text-xl font-bold">{date}</p>
+      <p className="text-center text-lg font-semibold">{title}</p>
+      {/* <p className="text-center text-xl font-bold">{date}</p> */}
     </div>
   );
 }

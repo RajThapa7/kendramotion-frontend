@@ -10,7 +10,7 @@ export default function SpotifyCard({ link }) {
         src={`https://open.spotify.com/embed${url.pathname}`}
         frameBorder={0}
         allow="encrypted-media"
-        className="w-full max-w-72 h-72"
+        className="w-full max-w-[350px]  h-72"
       />
       {/* <div className="bg-yellow-700">HELLO</div> */}
     </div>

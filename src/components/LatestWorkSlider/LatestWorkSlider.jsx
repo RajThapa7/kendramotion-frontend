@@ -13,10 +13,20 @@ import LatestWorkCard from "../LatestWorkCard/LatestWorkCard";
 import { useState } from "react";
 import MyModal from "../Modal/Modal";
 import VideoPlayer from "../../features/video-library/VideoPlayer/VideoPlayer";
+import useFetchLatestWork from "../../features/LatestWorkSection/api/useFetchLatestWork";
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const latestWorkQuery = useFetchLatestWork();
+
+  if (latestWorkQuery.isLoading) {
+    return <div>Loading ...</div>;
+  }
+
+  const latestWorks = latestWorkQuery.data;
+
   return (
     <>
       <MyModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)}>
@@ -41,14 +51,13 @@ export default function App() {
         }}
         modules={[EffectCoverflow, Pagination, Navigation]}
       >
-        {moviesData.map(({ id, title, description, videoId }) => {
+        {latestWorks.map(({ id, title, url }) => {
           return (
             <SwiperSlide key={id}>
               <LatestWorkCard
                 {...{
                   title,
-                  description,
-                  videoId,
+                  url,
                   setSelectedVideo,
                   setIsModalOpen,
                 }}
