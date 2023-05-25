@@ -1,11 +1,11 @@
-export default function VideoCard({ title, url, date, onClick }) {
+export default function VideoCard({ title, url, onClick }) {
   // extract the video id from the url
   const videoId = url.split("v=")[1];
 
   return (
     <div
       onClick={() => onClick(videoId)}
-      className="px-2 w-full group cursor-pointer transition-all"
+      className="px-2 w-full group cursor-pointer transition-all max-w-lg"
     >
       <img
         src={`https://img.youtube.com/vi/${videoId}/0.jpg`}

@@ -46,6 +46,8 @@ export default function MovieLibrary() {
     ],
   };
 
+  console.log("MOVIES", movieQuery.data);
+
   return (
     <div className="mb-16">
       <SectionHeader className="mb-5">Movies Library</SectionHeader>

@@ -1,6 +1,6 @@
 export default function MovieCard({ title, url }) {
   return (
-    <div className="px-1">
+    <div className="px-1 max-w-lg">
       <img
         src={url}
         alt="movie thumbnail"
