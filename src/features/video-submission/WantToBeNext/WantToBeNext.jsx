@@ -1,9 +1,14 @@
-import phone from "../../assets/phone.png";
-import Button from "../../components/Button/Button";
+import { useState } from "react";
+import phone from "../../../assets/phone.png";
+import Button from "../../../components/Button/Button";
+import SubmissionForm from "../SubmissionForm/SubmissionForm";
 
 export default function WantToBeNext() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
     <div className="flex flex-col lg:flex-row px-6 py-12 items-center bg-gray-200 shadow-lg my-24 rounded-md gap-y-8">
+      <SubmissionForm isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} />
       <div>
         <img
           src={phone}
@@ -28,7 +33,7 @@ export default function WantToBeNext() {
           </p>
         </div>
         <div className="flex justify-center lg:justify-start">
-          <Button>Fill The Form</Button>
+          <Button onClick={() => setIsFormOpen(true)}>Fill The Form</Button>
         </div>
       </div>
     </div>
