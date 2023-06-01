@@ -6,7 +6,7 @@ export default function Roadblock({ isOpen, closeModal, imgLink }) {
       <img
         src={imgLink}
         alt="road-block"
-        className="w-full aspect-auto max-h-screen object-contain"
+        className="w-full aspect-auto max-h-[90vh] object-contain"
         loading="lazy"
       />
     </MyModal>

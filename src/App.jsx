@@ -9,9 +9,8 @@ import FeedbackAndMapSection from "./features/feedback-and-map/FeedbackAndMapSec
 import LatestWorkSection from "./features/LatestWorkSection/LatestWorkSection";
 import Roadblock from "./features/roadblock/roadblock";
 import useSessionStorage from "../hooks/useSessionStorage";
-import roadblock2 from "./assets/ad.jpg";
-import roadblock from "./assets/roadblock.webp";
 import WantToBeNext from "./features/video-submission/WantToBeNext/WantToBeNext";
+import useFetchBannerList from "./features/Carousel/api/useFetchBanner";
 
 function App() {
   //we can set multiple roadblocks and track them based on index
@@ -21,24 +20,26 @@ function App() {
   );
 
   //array of roadblocks image links
-  const imgLink = [roadblock, roadblock2];
+  const imgLink = useFetchBannerList()?.filter(
+    (item) => item.roadBlock === true
+  );
 
   //close modal and increment the current roadblock index by one
-  const closeModal = (e) => {
-    e.stopPropagation();
+  const closeModal = () => {
+    // e.stopPropagation();
     setCurrentRoadblock(currentRoadblock + 1);
   };
 
   return (
     <AppLayout>
       {/* roadblock  */}
-      {imgLink.length !== 0 &&
-        imgLink.map((img, index) => (
+      {imgLink?.length !== 0 &&
+        imgLink?.map(({ _id, url }, index) => (
           <Roadblock
-            key={index}
+            key={_id}
             isOpen={currentRoadblock === index}
             closeModal={(e) => closeModal(e)}
-            imgLink={img}
+            imgLink={url}
           />
         ))}
       {/* roadblock  */}

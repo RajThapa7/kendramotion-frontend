@@ -1,4 +1,5 @@
 import classNames from "../../utils/classNames";
+import useFetchSpotifyLink from "./api/useFetchSpotifyLink";
 
 export default function LatestWorkCard({
   url,
@@ -7,7 +8,16 @@ export default function LatestWorkCard({
   setIsModalOpen,
   className,
 }) {
+  const isYoutubeLink = url.includes("youtube");
+  const isSpotifyLink = url.includes("spotify");
   const videoId = url.split("v=")[1];
+
+  const spotifyImageUrl = useFetchSpotifyLink(url, isSpotifyLink)?.data
+    ?.thumbnail_url;
+
+  const imageUrl = isYoutubeLink
+    ? `https://img.youtube.com/vi/${videoId}/0.jpg`
+    : spotifyImageUrl;
 
   return (
     <div
@@ -19,10 +29,14 @@ export default function LatestWorkCard({
       }}
     >
       <img
-        src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
+        src={imageUrl}
         alt=""
-        className={`
-        } w-full object-cover transition duration-500 group-hover:scale-105 aspect-[16/9]`}
+        className={`${
+          isYoutubeLink
+            ? "aspect-[16/9] object-cover"
+            : "aspect-[4/4] object-fill"
+        }
+         w-full  transition duration-500 group-hover:scale-105 `}
       />
 
       <div className="relative bg-white py-2 flex flex-col items-center gap-y-1">
