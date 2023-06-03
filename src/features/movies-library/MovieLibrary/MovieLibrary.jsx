@@ -10,6 +10,7 @@ export default function MovieLibrary() {
   const movieQuery = useFetchMovies();
 
   if (movieQuery.isLoading) return <p>Loading...</p>;
+  if (movieQuery.isError) return <p></p>;
 
   const numMovies = movieQuery.data.length;
 
@@ -45,8 +46,6 @@ export default function MovieLibrary() {
       },
     ],
   };
-
-  console.log("MOVIES", movieQuery.data);
 
   return (
     <div className="mb-16">

@@ -9,24 +9,16 @@ export default function LatestWorkCard({
   className,
 }) {
   const isYoutubeLink = url.includes("youtube");
-  const isSpotifyLink = url.includes("spotify");
   const videoId = url.split("v=")[1];
-
-  const spotifyImageUrl = useFetchSpotifyLink(url, isSpotifyLink)?.data
-    ?.thumbnail_url;
 
   const imageUrl = isYoutubeLink
     ? `https://img.youtube.com/vi/${videoId}/0.jpg`
-    : spotifyImageUrl;
+    : url;
 
   return (
     <div
       href="#"
       className={classNames(className, `group relative block overflow-hidden`)}
-      onClick={() => {
-        setIsModalOpen(true);
-        setSelectedVideo(videoId);
-      }}
     >
       <img
         src={imageUrl}

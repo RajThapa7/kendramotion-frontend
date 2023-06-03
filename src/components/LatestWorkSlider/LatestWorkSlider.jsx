@@ -25,9 +25,11 @@ export default function App() {
     return <div>Loading ...</div>;
   }
 
-  const latestWorks = latestWorkQuery.data;
+  if (latestWorkQuery.isError) {
+    return <div></div>;
+  }
 
-  console.log(latestWorks, "lw");
+  const latestWorks = latestWorkQuery.data;
 
   return (
     <>

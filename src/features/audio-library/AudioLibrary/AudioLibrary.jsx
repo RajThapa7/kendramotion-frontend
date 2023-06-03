@@ -11,6 +11,7 @@ export default function AudioLibrary() {
   const audioQuery = useFetchAudios();
 
   if (audioQuery.isLoading) return <p>Loading...</p>;
+  if (audioQuery.isError) return <p></p>;
 
   const numAudios = audioQuery.data.length;
 

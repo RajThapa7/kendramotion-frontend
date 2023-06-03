@@ -15,8 +15,9 @@ export default function VideoLibrary() {
   const videoQuery = useFetchVideos();
 
   if (videoQuery.isLoading) return <p>Loading...</p>;
+  if (videoQuery.isError) return <p></p>;
 
-  const numMovies = videoQuery.data.length;
+  const numMovies = videoQuery?.data?.length;
 
   const settings = {
     dots: true,
@@ -58,9 +59,9 @@ export default function VideoLibrary() {
       </MyModal>
       <h3 className="text-2xl font-medium mb-5">Video Library {">"}</h3>
       <Slider {...settings}>
-        {videoQuery.data.map((item) => (
+        {videoQuery.data?.map((item) => (
           <VideoCard
-            key={item.videoId}
+            key={item._id}
             url={item.url}
             title={item.title}
             date={"2023"}
