@@ -25,6 +25,10 @@ export default function App() {
     return <div>Loading ...</div>;
   }
 
+  if (latestWorkQuery.isError) {
+    return <div></div>;
+  }
+
   const latestWorks = latestWorkQuery.data;
 
   return (
@@ -70,42 +74,3 @@ export default function App() {
     </>
   );
 }
-
-const moviesData = [
-  {
-    id: 0,
-    title: "Mahaparush - New Nepali Movie Trailer 2021",
-    videoId: "_4Qqg0yofWg",
-    description: "Milan Newar ft. Paul shah and Malika Mahat",
-  },
-  {
-    id: 1,
-    title: "Mahaparush - New Nepali Movie Trailer 2021",
-    videoId: "_4Qqg0yofWg",
-    description: "Milan Newar ft. Paul shah and Malika Mahat",
-  },
-  {
-    id: 2,
-    title: "Mahaparush - New Nepali Movie Trailer 2021",
-    videoId: "_4Qqg0yofWg",
-    description: "Milan Newar ft. Paul shah and Malika Mahat",
-  },
-  {
-    id: 3,
-    title: "Mahaparush - New Nepali Movie Trailer 2021",
-    videoId: "_4Qqg0yofWg",
-    description: "Milan Newar ft. Paul shah and Malika Mahat",
-  },
-  {
-    id: 4,
-    title: "Mahaparush - New Nepali Movie Trailer 2021",
-    videoId: "_4Qqg0yofWg",
-    description: "Milan Newar ft. Paul shah and Malika Mahat",
-  },
-  {
-    id: 5,
-    title: "Mahaparush - New Nepali Movie Trailer 2021",
-    videoId: "_4Qqg0yofWg",
-    description: "Milan Newar ft. Paul shah and Malika Mahat",
-  },
-];

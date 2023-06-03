@@ -4,27 +4,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-// import "./styles.css";
+import "swiper/css/autoplay";
 
 // import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper";
 
-import img from "../../assets/ad.jpg";
+import useFetchBannerList from "./api/useFetchBanner";
+import { useRef } from "react";
 
 export default function App() {
-  const data = [img, img, img, img, img, img];
+  const data = useFetchBannerList();
+
+  const swiperRef = useRef();
 
   return (
     <>
       <Swiper
+        onSlideChange={() => console.log("slide is changed")}
         cssMode={true}
         navigation={true}
         pagination={{
           clickable: true,
         }}
-        mousewheel={true}
-        keyboard={true}
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -32,30 +36,31 @@ export default function App() {
           },
           1200: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 10,
           },
         }}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
+        modules={[Navigation, Pagination, Autoplay]}
+        className="mySwiper"
         loop={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="mySwiper "
         style={{
           paddingBottom: "55px",
         }}
       >
-        {data?.map((item, index) => (
+        {data?.map(({ _id, url, title }) => (
           <SwiperSlide
-            key={index}
+            key={_id}
             style={{
               height: "100%",
             }}
           >
             <img
-              src={item}
-              alt="slider-image"
+              src={url}
+              alt={title}
               style={{
                 aspectRatio: "16/10",
                 width: "100%",
