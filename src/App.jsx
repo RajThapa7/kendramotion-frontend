@@ -26,7 +26,6 @@ function App() {
 
   //close modal and increment the current roadblock index by one
   const closeModal = () => {
-    // e.stopPropagation();
     setCurrentRoadblock(currentRoadblock + 1);
   };
 
