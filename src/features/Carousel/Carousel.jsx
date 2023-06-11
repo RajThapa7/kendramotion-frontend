@@ -18,9 +18,8 @@ export default function App() {
   const swiperRef = useRef();
 
   return (
-    <>
+    <div className="py-20 pt-10">
       <Swiper
-        onSlideChange={() => console.log("slide is changed")}
         cssMode={true}
         navigation={true}
         pagination={{
@@ -48,7 +47,7 @@ export default function App() {
         className="mySwiper"
         loop={true}
         style={{
-          paddingBottom: "55px",
+          paddingBottom: "50px",
         }}
       >
         {data?.map(({ _id, url, title }) => (
@@ -62,13 +61,13 @@ export default function App() {
               src={url}
               alt={title}
               style={{
-                aspectRatio: "16/10",
+                aspectRatio: "16/9",
                 width: "100%",
               }}
             />
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }

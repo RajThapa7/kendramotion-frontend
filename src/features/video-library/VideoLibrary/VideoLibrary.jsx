@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import VideoCard from "../VideoCard/VideoCard";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import useFetchVideos from "../api/useFetchVideos";
+import SectionHeader from "../../../components/SectionHeader/SectionHeader";
 
 export default function VideoLibrary() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,11 +54,11 @@ export default function VideoLibrary() {
   };
 
   return (
-    <div className="mb-16">
+    <div className="lg:pb-28 pb-12 pt-8 lg:pt-24">
       <MyModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)}>
         <VideoPlayer videoId={selectedVideo} />
       </MyModal>
-      <h3 className="text-2xl font-medium mb-5">Video Library {">"}</h3>
+      <SectionHeader className="mb-16">Video Library</SectionHeader>
       <Slider {...settings}>
         {videoQuery.data?.map((item) => (
           <VideoCard
@@ -79,7 +80,7 @@ export default function VideoLibrary() {
 function RightArrow(props) {
   return (
     <button
-      className="absolute -right-2 top-[45%] z-10 -translate-y-[50%] rounded-full 
+      className="absolute -right-2 top-[40%] z-10 -translate-y-[50%] rounded-full 
       bg-gray-200 p-1 shadow-md transition-colors hover:bg-gray-300"
       onClick={props.onClick}
     >
@@ -91,7 +92,7 @@ function RightArrow(props) {
 function LeftArrow(props) {
   return (
     <button
-      className="absolute -left-2 top-[45%] z-10 -translate-y-[50%] rounded-full 
+      className="absolute -left-2 top-[40%] z-10 -translate-y-[50%] rounded-full 
       bg-gray-200 p-1 shadow-md transition-colors hover:bg-gray-300"
       onClick={props.onClick}
     >

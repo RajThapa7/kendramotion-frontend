@@ -25,7 +25,7 @@ const data = [
 
 const FeedbackandMapSection = () => {
   return (
-    <div className="flex flex-col gap-y-12 xl:flex-row gap-x-20 mb-10">
+    <div className="flex flex-col gap-y-12 xl:flex-row gap-x-20 mb-24">
       <Map className="flex-1" />
       <div className="flex-1 w-full gap-y-6 flex flex-col">
         <Feedback />
