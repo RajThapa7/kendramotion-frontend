@@ -18,10 +18,9 @@ export default function AudioLibrary() {
 
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: numAudios < 4 ? numAudios : 4,
-    slidesToScroll: 2,
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
     responsive: [
@@ -50,10 +49,10 @@ export default function AudioLibrary() {
   };
 
   return (
-    <div className="mb-16 lg:mb-28">
-      <SectionHeader className="mb-5">Audio Library</SectionHeader>
+    <div className="mb-16 lg:mb-48 mt-16">
+      <SectionHeader className="mb-20">Audio Library</SectionHeader>
       <div className="relative">
-        <div className="hidden lg:block absolute top-10 bg-[#1ed760] h-[300px] rounded-3xl w-[630px]" />
+        <div className="hidden lg:block absolute top-10 bg-[#efc751] h-[300px] rounded-3xl w-[630px]" />
         <div className="hidden lg:flex absolute left-10 top-[calc(2.5rem+50%)] text-3xl font-bold flex-col gap-2 -translate-y-[50%]">
           <span>Popular</span>
           <div className="flex items-center gap-x-2">

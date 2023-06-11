@@ -14,7 +14,10 @@ export default function LatestWorkCard({
   return (
     <div
       href="#"
-      className={classNames(className, `group relative block overflow-hidden`)}
+      className={classNames(
+        className,
+        `group relative block overflow-hidden transition-smooth project`
+      )}
       onClick={() => {
         setIsModalOpen(true);
         setSelectedVideo(videoId);
@@ -23,11 +26,13 @@ export default function LatestWorkCard({
       <img
         src={imageUrl}
         alt="img-latest-work"
-        className={`aspect-[16/9] object-cover w-full  transition duration-500 group-hover:scale-105 `}
+        className={`aspect-[16/9] object-cover w-full  transition duration-500 group-hover:scale-105 group-hover:-translate-y-2 `}
       />
 
       <div className="relative bg-white py-2 flex flex-col items-center gap-y-1">
-        <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+        <h3 className="text-sm lg:text-md font-semibold text-gray-900">
+          {title}
+        </h3>
       </div>
     </div>
   );

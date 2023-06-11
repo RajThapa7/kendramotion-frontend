@@ -18,7 +18,7 @@ export default function WantToBeNext() {
       </div>
 
       <div className="flex flex-col gap-y-8">
-        <h1 className="font-bold text-gray-800 text-5xl text-center lg:text-start">
+        <h1 className="font-bold text-gray-800 text-4xl lg:text-5xl text-center lg:text-start">
           Do you want to be next?
         </h1>
 
