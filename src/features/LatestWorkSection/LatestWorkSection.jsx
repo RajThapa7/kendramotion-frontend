@@ -8,7 +8,7 @@ export default function LatestWorkSection() {
       <Title>
         Our latest Work <MdOutlineNavigateNext />{" "}
       </Title>
-      <p className="text-lg text-gray-600">
+      <p className="text-lg text-gray-600 mb-12">
         Most recent Music and Video Projects
       </p>
       <LatestWorkSlider />
