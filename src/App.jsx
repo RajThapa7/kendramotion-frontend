@@ -11,6 +11,7 @@ import Roadblock from "./features/roadblock/roadblock";
 import useSessionStorage from "../hooks/useSessionStorage";
 import WantToBeNext from "./features/video-submission/WantToBeNext/WantToBeNext";
 import useFetchBannerList from "./features/Carousel/api/useFetchBanner";
+import ArtistProfileSection from "./features/artist-profile/components/ArtistProfileSection/ArtistProfileSection";
 
 function App() {
   //we can set multiple roadblocks and track them based on index
@@ -47,6 +48,7 @@ function App() {
       <LatestWorkSection />
       <VideoLibrary />
       <AudioLibrary />
+      <ArtistProfileSection />
       <WantToBeNext />
       <MovieLibrary />
       <div className="border-b border-black w-full mb-10" /> {/* Divider */}
