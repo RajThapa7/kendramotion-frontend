@@ -5,6 +5,7 @@ import useFetchArtists from "../../api/useFetchArtists";
 import ArtistProfileCard from "../ArtistProfileCard/ArtistProfileCard";
 import ArtistModal from "../ArtistModal/ArtistModal";
 import classNames from "../../../../../utils/classNames";
+import LoadingSkeleton from "../../../../components/LoadingSkeleton/LoadingSkeleton";
 
 export default function ArtistProfileSection() {
   const [viewMore, setViewMore] = useState(false);
@@ -14,7 +15,7 @@ export default function ArtistProfileSection() {
 
   const artistQuery = useFetchArtists();
 
-  if (artistQuery.isLoading) return <p>Loading...</p>;
+  if (artistQuery.isLoading) return <LoadingSkeleton />;
   if (artistQuery.isError) return <p></p>;
 
   // limit the array to 5 elements

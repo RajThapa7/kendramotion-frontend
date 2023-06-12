@@ -5,11 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import useFetchMovies from "../api/useFetchMovies";
+import LoadingSkeleton from "../../../components/LoadingSkeleton/LoadingSkeleton";
 
 export default function MovieLibrary() {
   const movieQuery = useFetchMovies();
 
-  if (movieQuery.isLoading) return <p>Loading...</p>;
+  if (movieQuery.isLoading) return <LoadingSkeleton />;
   if (movieQuery.isError) return <p></p>;
 
   const numMovies = movieQuery.data.length;
