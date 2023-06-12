@@ -48,8 +48,6 @@ export default function AudioLibrary() {
     ],
   };
 
-  console.log("AUDIO", audioQuery.data);
-
   return (
     <div className="mb-16 lg:mb-28">
       <SectionHeader className="mb-5">Audio Library</SectionHeader>
