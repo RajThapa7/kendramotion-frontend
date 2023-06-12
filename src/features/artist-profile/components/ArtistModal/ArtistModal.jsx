@@ -4,7 +4,7 @@ import useFetchArtistReleases from "../../api/useFetchArtistReleases";
 export default function ArtistModal({ isOpen, onClose, artist }) {
   const artistQuery = useFetchArtistReleases(artist?._id);
 
-  const artistDetails = artistQuery.data;
+  const latestReleases = artistQuery.data;
 
   return (
     <Modal isOpen={isOpen} closeModal={onClose}>
@@ -28,10 +28,10 @@ export default function ArtistModal({ isOpen, onClose, artist }) {
         <hr className="my-3" />
         <div className="mb-5">
           <p className="font-medium text-xl mb-2">Latest Movies</p>
-          {artistDetails?.latestRelease?.movies?.length > 0 ? (
-            artistDetails?.latestRelease?.movies?.map((movie) => (
+          {latestReleases?.movies?.length > 0 ? (
+            latestReleases?.movies?.map((movie) => (
               <div className="mb-2" key={movie._id}>
-                <p className="max-w-[400px]">{movie?.name}</p>
+                <p>{movie?.name}</p>
               </div>
             ))
           ) : (
@@ -40,10 +40,10 @@ export default function ArtistModal({ isOpen, onClose, artist }) {
         </div>
         <div>
           <p className="font-medium text-xl mb-2">Latest Songs</p>
-          {artistDetails?.latestRelease?.songs?.length > 0 ? (
-            artistDetails?.latestRelease?.songs?.map((song) => (
+          {latestReleases?.songs?.length > 0 ? (
+            latestReleases?.songs?.map((song) => (
               <div className="mb-2" key={song._id}>
-                <p className="max-w-[400px]">{song?.name}</p>
+                <p>{song?.name}</p>
               </div>
             ))
           ) : (
