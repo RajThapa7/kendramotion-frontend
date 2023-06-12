@@ -11,11 +11,14 @@ import { Navigation, Pagination, Autoplay } from "swiper";
 
 import useFetchBannerList from "./api/useFetchBanner";
 import { useRef } from "react";
+import LoadingSkeleton from "../../components/LoadingSkeleton/LoadingSkeleton";
 
 export default function App() {
   const data = useFetchBannerList();
 
   const swiperRef = useRef();
+
+  if (data?.isLoading) return <LoadingSkeleton />;
 
   return (
     <div className="py-20 pt-10">
@@ -50,7 +53,7 @@ export default function App() {
           paddingBottom: "50px",
         }}
       >
-        {data?.map(({ _id, url, title }) => (
+        {data.data?.map(({ _id, url, title }) => (
           <SwiperSlide
             key={_id}
             style={{

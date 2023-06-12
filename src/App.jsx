@@ -23,7 +23,7 @@ function App() {
   );
 
   //array of roadblocks image links
-  const imgLink = useFetchBannerList()?.filter(
+  const imgLink = useFetchBannerList().data?.filter(
     (item) => item.roadBlock === true
   );
 

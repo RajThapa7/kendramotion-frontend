@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Button from "../../../../components/Button/Button";
-import Title from "../../../../components/Title/Title";
 import useFetchArtists from "../../api/useFetchArtists";
 import ArtistProfileCard from "../ArtistProfileCard/ArtistProfileCard";
 import ArtistModal from "../ArtistModal/ArtistModal";
 import classNames from "../../../../../utils/classNames";
 import LoadingSkeleton from "../../../../components/LoadingSkeleton/LoadingSkeleton";
+import SectionHeader from "../../../../components/SectionHeader/SectionHeader";
 
 export default function ArtistProfileSection() {
   const [viewMore, setViewMore] = useState(false);
@@ -30,7 +30,7 @@ export default function ArtistProfileSection() {
     <div
       className={classNames(
         viewMore ? "lg:flex-col" : "lg:flex-row",
-        "flex flex-col gap-y-16 py-12 pb-20 lg:flex-row gap-x-16"
+        "flex flex-col gap-y-16 py-16 pb-20 lg:flex-row gap-x-16"
       )}
     >
       <ArtistModal
@@ -39,7 +39,7 @@ export default function ArtistProfileSection() {
         onClose={() => setOpenModal(false)}
       />
       <div className="gap-y-4 flex flex-grow flex-col basis-0">
-        <Title>Artist Profile</Title>
+        <SectionHeader>Artist Profile</SectionHeader>
         <p className="text-lg text-gray-600">
           An artist is a person engaged in an activity related to creating art,
           practicing the arts, or demonstrating an art. Special Section for

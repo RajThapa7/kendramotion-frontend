@@ -14,7 +14,7 @@ const useFetchBannerList = () => {
     cacheTime: 15 * 60 * 1000,
     staleTime: 10 * 60 * 1000,
   });
-  return result.data;
+  return result;
 };
 
 export default useFetchBannerList;
