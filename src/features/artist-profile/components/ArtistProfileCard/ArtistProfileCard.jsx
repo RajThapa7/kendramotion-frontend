@@ -4,9 +4,7 @@ export default function ArtistProfileCard({ artist, onClick }) {
       <img
         src={artist?.profileImage}
         alt="profile"
-        className="ring-1 ring-gray-600 rounded-full cursor-pointer"
-        width={80}
-        height={80}
+        className="ring-1 ring-gray-600 rounded-full cursor-pointer shrink-0 w-20 h-20"
         onClick={onClick}
       />
       <div className="flex flex-col gap-y-3">

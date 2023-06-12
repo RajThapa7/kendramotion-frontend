@@ -13,9 +13,7 @@ export default function ArtistModal({ isOpen, onClose, artist }) {
         <img
           src={artist?.profileImage}
           alt="profile"
-          className="ring-1 ring-gray-600 rounded-full mb-4"
-          width={80}
-          height={80}
+          className="ring-1 ring-gray-600 rounded-full shrink-0 w-20 h-20 mb-5"
         />
         <div className="flex items-center gap-3 mb-3 justify-between flex-wrap">
           <p className="font-medium">Name: </p>
