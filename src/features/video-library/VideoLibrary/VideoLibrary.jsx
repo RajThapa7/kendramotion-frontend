@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import VideoCard from "../VideoCard/VideoCard";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import useFetchVideos from "../api/useFetchVideos";
+import LoadingSkeleton from "../../../components/LoadingSkeleton/LoadingSkeleton";
 
 export default function VideoLibrary() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function VideoLibrary() {
 
   const videoQuery = useFetchVideos();
 
-  if (videoQuery.isLoading) return <p>Loading...</p>;
+  if (videoQuery.isLoading) return <LoadingSkeleton className="mb-5" />;
   if (videoQuery.isError) return <p></p>;
 
   const numMovies = videoQuery?.data?.length;

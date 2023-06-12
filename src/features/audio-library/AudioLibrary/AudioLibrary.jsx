@@ -6,11 +6,12 @@ import SpotifyCard from "../SpotifyCard/SpotifyCard";
 import { HiMusicNote } from "react-icons/hi";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import useFetchAudios from "../api/useFetchAudios";
+import LoadingSkeleton from "../../../components/LoadingSkeleton/LoadingSkeleton";
 
 export default function AudioLibrary() {
   const audioQuery = useFetchAudios();
 
-  if (audioQuery.isLoading) return <p>Loading...</p>;
+  if (audioQuery.isLoading) return <LoadingSkeleton />;
   if (audioQuery.isError) return <p></p>;
 
   const numAudios = audioQuery.data.length;

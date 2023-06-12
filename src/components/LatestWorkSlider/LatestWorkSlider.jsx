@@ -14,6 +14,7 @@ import { useState } from "react";
 import MyModal from "../Modal/Modal";
 import VideoPlayer from "../../features/video-library/VideoPlayer/VideoPlayer";
 import useFetchLatestWork from "../../features/LatestWorkSection/api/useFetchLatestWork";
+import LoadingSkeleton from "../LoadingSkeleton/LoadingSkeleton";
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,7 +23,7 @@ export default function App() {
   const latestWorkQuery = useFetchLatestWork();
 
   if (latestWorkQuery.isLoading) {
-    return <div>Loading ...</div>;
+    return <LoadingSkeleton />;
   }
 
   if (latestWorkQuery.isError) {
