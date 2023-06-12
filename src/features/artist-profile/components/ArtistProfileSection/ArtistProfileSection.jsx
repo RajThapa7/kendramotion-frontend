@@ -3,9 +3,14 @@ import Button from "../../../../components/Button/Button";
 import Title from "../../../../components/Title/Title";
 import useFetchArtists from "../../api/useFetchArtists";
 import ArtistProfileCard from "../ArtistProfileCard/ArtistProfileCard";
+import ArtistModal from "../ArtistModal/ArtistModal";
+import classNames from "../../../../../utils/classNames";
 
 export default function ArtistProfileSection() {
   const [viewMore, setViewMore] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  const [selectedArtist, setSelectedArtist] = useState();
 
   const artistQuery = useFetchArtists();
 
@@ -21,7 +26,17 @@ export default function ArtistProfileSection() {
   }
 
   return (
-    <div className="flex flex-col gap-y-16 py-12 pb-20 lg:flex-row gap-x-16">
+    <div
+      className={classNames(
+        viewMore ? "lg:flex-col" : "lg:flex-row",
+        "flex flex-col gap-y-16 py-12 pb-20 lg:flex-row gap-x-16"
+      )}
+    >
+      <ArtistModal
+        artist={selectedArtist}
+        isOpen={openModal}
+        onClose={() => setOpenModal(false)}
+      />
       <div className="gap-y-4 flex flex-grow flex-col basis-0">
         <Title>Artist Profile</Title>
         <p className="text-lg text-gray-600">
@@ -40,9 +55,21 @@ export default function ArtistProfileSection() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-y-10 flex-grow basis-0">
+      <div
+        className={classNames(
+          viewMore ? "sm:flex-row" : "sm:flex-col",
+          "flex flex-col gap-10 flex-grow basis-0 flex-wrap"
+        )}
+      >
         {artists?.map((artist) => (
-          <ArtistProfileCard artist={artist} key={artist._id} />
+          <ArtistProfileCard
+            onClick={() => {
+              setOpenModal(true);
+              setSelectedArtist(artist);
+            }}
+            artist={artist}
+            key={artist._id}
+          />
         ))}
       </div>
     </div>
