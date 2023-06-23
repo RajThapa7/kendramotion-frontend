@@ -9,7 +9,7 @@ export default function HeroSection() {
         alt="background-img"
         className="-z-10 absolute left-0 right-0 w-full h-[80vh] object-cover"
       />
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="grow flex flex-col justify-center -mt-40">
         <h1 className="text-white text-4xl font-semibold mb-3">
           Kendra Motion Pictures
