@@ -4,7 +4,7 @@ import LatestWorkSlider from "../../components/LatestWorkSlider/LatestWorkSlider
 
 export default function LatestWorkSection() {
   return (
-    <div className="flex flex-col gap-y-3 pb-20">
+    <div className="flex flex-col gap-y-3 pb-20" id="latest-work">
       <Title>
         Our latest Work <MdOutlineNavigateNext />{" "}
       </Title>

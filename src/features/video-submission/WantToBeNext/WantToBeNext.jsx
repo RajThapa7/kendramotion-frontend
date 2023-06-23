@@ -7,13 +7,13 @@ export default function WantToBeNext() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
-    <div className="flex flex-col lg:flex-row px-6 py-12 items-center bg-gray-200 shadow-lg my-24 rounded-md gap-y-8">
+    <div className="flex flex-col lg:flex-row px-6 py-12 items-center bg-gray-200 shadow-lg mb-20 rounded-md gap-y-8">
       <SubmissionForm isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} />
       <div>
         <img
           src={phone}
           alt="phone-image"
-          className="object-fill h-[350px] w-full lg:h-auto"
+          className="object-contain h-[350px] w-full lg:h-auto"
         />
       </div>
 

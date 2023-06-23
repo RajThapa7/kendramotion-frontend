@@ -12,11 +12,54 @@ import WantToBeNext from "./features/video-submission/WantToBeNext/WantToBeNext"
 import useFetchBannerList from "./features/Carousel/api/useFetchBanner";
 import ArtistProfileSection from "./features/artist-profile/components/ArtistProfileSection/ArtistProfileSection";
 import LatestWorkSection from "./features/LatestWorkSection/LatestWorkSection";
-import ScrollToTop from "react-scroll-to-top";
-import ScrollToTopIcon from "./components/ScrollToTop/ScrollToTop";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ArtistListPage from "./features/artist-profile/components/ArtistListPage/ArtistListPage";
+import ArtistInfoPage from "./features/artist-profile/components/ArtistInfoPage/ArtistInfoPage";
 
 function App() {
-  //we can set multiple roadblocks and track them based on index
+  return (
+    <BrowserRouter>
+      <AppLayout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/videos"
+            element={<VideoLibrary className="mt-28" heading="Videos" />}
+          />
+          <Route
+            path="/artists"
+            element={<ArtistListPage className="mt-28" />}
+          />
+          <Route
+            path="/artist/:id"
+            element={<ArtistInfoPage className="mt-28" />}
+          />
+        </Routes>
+      </AppLayout>
+    </BrowserRouter>
+  );
+}
+
+function HomePage() {
+  return (
+    <>
+      <RoadBlock />
+      <HeroSection />
+      <Carousel />
+      <LatestWorkSection />
+      <ArtistProfileSection />
+      <VideoLibrary maxItems={8} />
+      <AudioLibrary />
+      <WantToBeNext />
+      <MovieLibrary />
+      <div className="border-b border-black w-full mb-20" /> {/* Divider */}
+      <FeedbackAndMapSection />
+      <Footer />
+    </>
+  );
+}
+
+function RoadBlock() {
   const [currentRoadblock, setCurrentRoadblock] = useSessionStorage(
     "currentRoadblock",
     0
@@ -33,11 +76,7 @@ function App() {
   };
 
   return (
-    <AppLayout>
-      <div className="opacity-60 hover:opacity-100 transition-smooth hidden lg:flex">
-        <ScrollToTop smooth component={<ScrollToTopIcon />} />
-      </div>
-      {/* roadblock  */}
+    <>
       {imgLink?.length !== 0 &&
         imgLink?.map(({ _id, url }, index) => (
           <Roadblock
@@ -47,19 +86,7 @@ function App() {
             imgLink={url}
           />
         ))}
-      {/* roadblock  */}
-      <HeroSection />
-      <Carousel />
-      <LatestWorkSection />
-      <VideoLibrary />
-      <AudioLibrary />
-      <ArtistProfileSection />
-      <WantToBeNext />
-      <MovieLibrary />
-      <div className="border-b border-black w-full mb-20" /> {/* Divider */}
-      <FeedbackAndMapSection />
-      <Footer />
-    </AppLayout>
+    </>
   );
 }
 

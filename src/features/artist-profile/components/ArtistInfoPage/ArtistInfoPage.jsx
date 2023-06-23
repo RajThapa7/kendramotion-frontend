@@ -1,15 +1,37 @@
-import Modal from "../../../../components/Modal/Modal";
+import { useParams } from "react-router-dom";
+import useFetchArtist from "../../api/useFetchArtist";
+import classNames from "../../../../utils/classNames";
 import useFetchArtistReleases from "../../api/useFetchArtistReleases";
 
-export default function ArtistModal({ isOpen, onClose, artist }) {
-  const artistQuery = useFetchArtistReleases(artist?._id);
+export default function ArtistInfoPage({ className = "" }) {
+  const { id } = useParams();
+  const artistQuery = useFetchArtist(id);
 
-  const latestReleases = artistQuery.data;
+  const latestReleasesQuery = useFetchArtistReleases(id);
+
+  if (artistQuery.isLoading || latestReleasesQuery.isLoading) {
+    return <div></div>;
+  }
+
+  if (artistQuery.isError || latestReleasesQuery.isLoading) {
+    return <div></div>;
+  }
+
+  const artist = artistQuery.data;
+
+  const latestReleases = latestReleasesQuery.data;
+  const movies = latestReleases?.movies;
+  const songs = latestReleases?.songs;
 
   return (
-    <Modal isOpen={isOpen} closeModal={onClose}>
-      <div className="bg-white w-[90vw] max-w-screen-md p-5 rounded-md">
-        <p className="text-2xl font-medium mb-5">Artist Details</p>
+    <div>
+      <div
+        className={classNames(
+          className,
+          "bg-white w-[90vw] max-w-screen-md p-5 rounded-md"
+        )}
+      >
+        <p className="text-2xl font-medium mb-10">Artist Profile</p>
         <img
           src={artist?.profileImage}
           alt="profile"
@@ -26,8 +48,8 @@ export default function ArtistModal({ isOpen, onClose, artist }) {
         <hr className="my-3" />
         <div className="mb-5">
           <p className="font-medium text-xl mb-2">Latest Movies</p>
-          {latestReleases?.movies?.length > 0 ? (
-            latestReleases?.movies?.map((movie) => (
+          {movies?.length > 0 ? (
+            movies?.map((movie) => (
               <div className="mb-2" key={movie._id}>
                 <p>{movie?.name}</p>
               </div>
@@ -38,8 +60,8 @@ export default function ArtistModal({ isOpen, onClose, artist }) {
         </div>
         <div>
           <p className="font-medium text-xl mb-2">Latest Songs</p>
-          {latestReleases?.songs?.length > 0 ? (
-            latestReleases?.songs?.map((song) => (
+          {songs?.length > 0 ? (
+            songs?.map((song) => (
               <div className="mb-2" key={song._id}>
                 <p>{song?.name}</p>
               </div>
@@ -49,6 +71,6 @@ export default function ArtistModal({ isOpen, onClose, artist }) {
           )}
         </div>
       </div>
-    </Modal>
+    </div>
   );
 }
