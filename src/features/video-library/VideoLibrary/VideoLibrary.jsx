@@ -10,8 +10,11 @@ import SectionHeader from "../../../components/SectionHeader/SectionHeader";
 import Button from "../../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import classNames from "../../../utils/classNames";
+import useWindowDimensions from "../../../../hooks/useWindowDimensions";
 
 export default function VideoLibrary({ maxItems, className = "", heading }) {
+  const { width } = useWindowDimensions();
+
   const navigate = useNavigate();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,13 +35,19 @@ export default function VideoLibrary({ maxItems, className = "", heading }) {
   let newVideos;
   // limit videos upto maxItems if provided
   if (maxItems) {
+    // change maxItems based on screen size
+    if (width < 640) {
+      maxItems = 3;
+    } else if (width < 1024) {
+      maxItems = 6;
+    }
     newVideos = videoQuery?.data?.slice(0, maxItems);
   } else {
     newVideos = videoQuery?.data;
   }
 
   return (
-    <div className={classNames(className)}>
+    <div className={classNames(className, "mb-20")}>
       <MyModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)}>
         <VideoPlayer videoId={selectedVideo} />
       </MyModal>
