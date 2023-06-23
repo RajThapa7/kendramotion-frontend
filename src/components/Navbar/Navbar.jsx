@@ -10,8 +10,6 @@ export default function Navbar() {
 
   const [dropdown, setDropdown] = useState(false);
 
-  console.log("Location", location.pathname);
-
   return (
     <nav
       className={classNames(

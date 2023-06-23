@@ -19,8 +19,13 @@ export default function VideoLibrary({ maxItems, className = "", heading }) {
 
   const videoQuery = useFetchVideos();
 
-  if (videoQuery.isLoading) return <LoadingSkeleton className="mb-5" />;
-  if (videoQuery.isError) return <p></p>;
+  if (videoQuery.isLoading) {
+    return <LoadingSkeleton className={classNames("mb-5", className)} />;
+  }
+
+  if (videoQuery.isError) {
+    return <p></p>;
+  }
 
   const videos = videoQuery?.data;
 

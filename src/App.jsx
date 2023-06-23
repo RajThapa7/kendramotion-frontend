@@ -13,6 +13,8 @@ import useFetchBannerList from "./features/Carousel/api/useFetchBanner";
 import ArtistProfileSection from "./features/artist-profile/components/ArtistProfileSection/ArtistProfileSection";
 import LatestWorkSection from "./features/LatestWorkSection/LatestWorkSection";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ArtistListPage from "./features/artist-profile/components/ArtistListPage/ArtistListPage";
+import ArtistInfoPage from "./features/artist-profile/components/ArtistInfoPage/ArtistInfoPage";
 
 function App() {
   return (
@@ -23,6 +25,14 @@ function App() {
           <Route
             path="/videos"
             element={<VideoLibrary className="mt-28" heading="Videos" />}
+          />
+          <Route
+            path="/artists"
+            element={<ArtistListPage className="mt-28" />}
+          />
+          <Route
+            path="/artist/:id"
+            element={<ArtistInfoPage className="mt-28" />}
           />
         </Routes>
       </AppLayout>
@@ -37,9 +47,9 @@ function HomePage() {
       <HeroSection />
       <Carousel />
       <LatestWorkSection />
+      <ArtistProfileSection />
       <VideoLibrary maxItems={8} />
       <AudioLibrary />
-      <ArtistProfileSection />
       <WantToBeNext />
       <MovieLibrary />
       <div className="border-b border-black w-full mb-20" /> {/* Divider */}
