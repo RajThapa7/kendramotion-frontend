@@ -16,7 +16,7 @@ body {
 }
 
 .dot-background {
-  background-image: radial-gradient(#ababab 20%, transparent 20%);
+  background-image: radial-gradient(#b6b4b4 20%, transparent 20%);
   background-position: 0 0, 50px 50px;
   background-size: 15px 15px;
   width: 100%;

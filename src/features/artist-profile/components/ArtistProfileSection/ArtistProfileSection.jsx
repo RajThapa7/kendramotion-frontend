@@ -19,7 +19,7 @@ export default function ArtistProfileSection() {
   return (
     <div
       className={classNames(
-        "flex flex-col gap-y-16 py-16 pb-20 lg:flex-row gap-x-16"
+        "flex flex-col gap-y-16 pt-0 lg:pt-16 pb-20 lg:flex-row gap-x-16"
       )}
     >
       <div className="gap-y-4 flex flex-grow flex-col basis-0">

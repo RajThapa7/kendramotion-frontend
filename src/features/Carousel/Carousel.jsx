@@ -90,9 +90,10 @@ export default function Carousel() {
     dots: true,
     infinite: true,
     speed: 500,
-    // slidesToScroll: 2,
+    autoplay: true,
+    autoplayspeed: 7000,
     slidesToShow: 3,
-
+    pauseonhover: true,
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
     responsive: [

@@ -54,7 +54,7 @@ export default function VideoLibrary({ maxItems, className = "", heading }) {
       <SectionHeader className="mb-20">
         {heading || "Video Library"}
       </SectionHeader>
-      <div className="dot-background bg-[#efc751] pb-8 rounded-md opacity-95">
+      <div className="dot-background bg-[#efc751] pb-8 rounded-md">
         <div className="grid gap-10 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 mb-5 -translate-y-8 px-8">
           {newVideos?.map((item) => (
             <VideoCard
