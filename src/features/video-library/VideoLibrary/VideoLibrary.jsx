@@ -20,6 +20,8 @@ export default function VideoLibrary({ maxItems, className = "", heading }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  const [viewMore, setViewMore] = useState(false);
+
   const videoQuery = useFetchVideos();
 
   if (videoQuery.isLoading) {
@@ -47,7 +49,7 @@ export default function VideoLibrary({ maxItems, className = "", heading }) {
   }
 
   return (
-    <div className={classNames(className, "mb-20")}>
+    <div className="pb-0 xl:pb-12 pt-0 lg:pt-12 ">
       <MyModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)}>
         <VideoPlayer videoId={selectedVideo} />
       </MyModal>

@@ -30,7 +30,7 @@ export default function LatestWorkCard({
       />
 
       <div className="relative bg-white py-2 flex flex-col items-center gap-y-1">
-        <h3 className="text-sm lg:text-md font-semibold text-gray-900">
+        <h3 className=" text-sm md:text-md font-semibold text-gray-900">
           {title}
         </h3>
       </div>

@@ -49,8 +49,8 @@ export default function AudioLibrary() {
   };
 
   return (
-    <div className="mb-20 lg:mb-28">
-      <SectionHeader className="mb-10">Audio Library</SectionHeader>
+    <div className="mb-0 lg:mb-44 mt-14">
+      <SectionHeader className="mb-14">Audio Library</SectionHeader>
       <div className="relative">
         <div className="hidden lg:block absolute top-10 bg-[#efc751] h-[300px] rounded-3xl w-[630px]" />
         <div className="hidden lg:flex absolute left-10 top-[calc(2.5rem+50%)] text-3xl font-bold flex-col gap-2 -translate-y-[50%]">

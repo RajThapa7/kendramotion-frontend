@@ -15,6 +15,7 @@ import LatestWorkSection from "./features/LatestWorkSection/LatestWorkSection";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ArtistListPage from "./features/artist-profile/components/ArtistListPage/ArtistListPage";
 import ArtistInfoPage from "./features/artist-profile/components/ArtistInfoPage/ArtistInfoPage";
+import OurTeamSection from "./features/OurTeamSection/OurTeamSection";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function HomePage() {
       <AudioLibrary />
       <WantToBeNext />
       <MovieLibrary />
+      <OurTeamSection />
       <div className="border-b border-black w-full mb-20" /> {/* Divider */}
       <FeedbackAndMapSection />
       <Footer />

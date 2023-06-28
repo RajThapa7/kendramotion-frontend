@@ -14,7 +14,7 @@ export default function LatestWorkSlider() {
     className: "center",
     dots: true,
     infinite: true,
-    autoplay: true,
+    // autoplay: true,
     pauseonhover: true,
     autoplayspeed: 7000,
     speed: 500,

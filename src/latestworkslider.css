@@ -5,11 +5,17 @@
 }
 
 .center .slick-center .project {
-  transform: scale(1.3);
+  transform: scale(1.1);
   opacity: 1;
   transition: all 0.3s ease-in-out;
   position: relative;
   z-index: 1000;
+}
+
+@media (min-width: 1024px) {
+  .center .slick-center .project {
+    transform: scale(1.3);
+  }
 }
 
 #latest-work-slider .slick-list {

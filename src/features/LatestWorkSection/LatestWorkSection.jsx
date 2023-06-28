@@ -4,11 +4,11 @@ import LatestWorkSlider from "../../components/LatestWorkSlider/LatestWorkSlider
 
 export default function LatestWorkSection() {
   return (
-    <div className="flex flex-col gap-y-3 pb-20" id="latest-work">
+    <div className="flex flex-col gap-y-3 pb-4">
       <Title>
         Our latest Work <MdOutlineNavigateNext />{" "}
       </Title>
-      <p className="text-lg text-gray-600 mb-12">
+      <p className="text-lg text-gray-600 ">
         Most recent Music and Video Projects
       </p>
       <LatestWorkSlider />
