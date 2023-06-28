@@ -20,8 +20,6 @@ export default function VideoLibrary({ maxItems, className = "", heading }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const [viewMore, setViewMore] = useState(false);
-
   const videoQuery = useFetchVideos();
 
   if (videoQuery.isLoading) {
@@ -49,32 +47,34 @@ export default function VideoLibrary({ maxItems, className = "", heading }) {
   }
 
   return (
-    <div className="pb-0 xl:pb-12 pt-0 lg:pt-12 ">
+    <div className={classNames(className, "pb-0 xl:pb-12 pt-0 lg:pt-12 ")}>
       <MyModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)}>
         <VideoPlayer videoId={selectedVideo} />
       </MyModal>
-      <SectionHeader className="mb-10">
+      <SectionHeader className="mb-20">
         {heading || "Video Library"}
       </SectionHeader>
-      <div className="grid gap-10 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 mb-10">
-        {newVideos?.map((item) => (
-          <VideoCard
-            key={item._id}
-            url={item.url}
-            title={item.title}
-            date={"2023"}
-            onClick={(id) => {
-              setIsModalOpen(true);
-              setSelectedVideo(id);
-            }}
-          />
-        ))}
-      </div>
-      {maxItems && videos?.length > maxItems && (
-        <div className="flex justify-center">
-          <Button onClick={() => navigate("/videos")}>View More</Button>
+      <div className="dot-background bg-[#efc751] pb-8 rounded-md opacity-95">
+        <div className="grid gap-10 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 mb-5 -translate-y-8 px-8">
+          {newVideos?.map((item) => (
+            <VideoCard
+              key={item._id}
+              url={item.url}
+              title={item.title}
+              date={"2023"}
+              onClick={(id) => {
+                setIsModalOpen(true);
+                setSelectedVideo(id);
+              }}
+            />
+          ))}
         </div>
-      )}
+        {maxItems && videos?.length > maxItems && (
+          <div className="flex justify-center">
+            <Button onClick={() => navigate("/videos")}>View More</Button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

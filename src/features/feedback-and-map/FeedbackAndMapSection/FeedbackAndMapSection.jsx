@@ -10,22 +10,22 @@ const data = [
   {
     id: 0,
     img: facebook,
-    link: "#",
+    link: "https://www.facebook.com/Kendramotionpictures/",
   },
   {
     id: 1,
     img: instagram,
-    link: "#",
+    link: "https://www.instagram.com/kendramotionpictures/?hl=en",
   },
   {
     id: 2,
     img: youtube,
-    link: "#",
+    link: "https://www.youtube.com/@KendraMotionPictures",
   },
   {
     id: 3,
     img: tiktok,
-    link: "#",
+    link: "https://www.tiktok.com/@kendramotionpictures",
   },
 ];
 
