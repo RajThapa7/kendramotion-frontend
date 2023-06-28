@@ -12,7 +12,9 @@ export default function VideoCard({ title, url, onClick }) {
         alt={title}
         className="mb-3 group-hover:scale-105 transition-all duration-300 ease-in-out shadow-md aspect-[5/3] w-full object-cover"
       />
-      <p className="text-center text-lg xl:text-xl font-semibold">{title}</p>
+      <p className="text-center text-lg xl:text-xl font-semibold text-gray-900">
+        {title}
+      </p>
     </div>
   );
 }
