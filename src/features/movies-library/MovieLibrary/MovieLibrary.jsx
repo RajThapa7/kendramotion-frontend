@@ -49,8 +49,8 @@ export default function MovieLibrary() {
   };
 
   return (
-    <div className="mb-20">
-      <SectionHeader className="mb-10">Movies Library</SectionHeader>
+    <div className="mb-16 lg:mt-28 mt-20">
+      <SectionHeader className="mb-14">Movies Library</SectionHeader>
       <div className="mb-5">
         <Slider {...settings}>
           {movieQuery.data.map((movie) => (

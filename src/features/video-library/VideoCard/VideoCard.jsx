@@ -5,15 +5,14 @@ export default function VideoCard({ title, url, onClick }) {
   return (
     <div
       onClick={() => onClick(videoId)}
-      className="px-2 w-full group cursor-pointer transition-all"
+      className="px-2 w-full group cursor-pointer transition-smooth max-w-lg overflow-hidden"
     >
       <img
         src={`https://img.youtube.com/vi/${videoId}/0.jpg`}
         alt={title}
-        className="mb-3 group-hover:opacity-80 shadow-md aspect-[5/3] w-full object-cover duration-150"
+        className="mb-3 group-hover:scale-105 transition-all duration-300 ease-in-out shadow-md aspect-[5/3] w-full object-cover"
       />
-      <p className="text-center text-lg font-semibold">{title}</p>
-      {/* <p className="text-center text-xl font-bold">{date}</p> */}
+      <p className="text-center text-lg xl:text-xl font-semibold">{title}</p>
     </div>
   );
 }

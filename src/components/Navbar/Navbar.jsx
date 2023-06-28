@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav
       className={classNames(
-        "absolute -translate-x-1/2 left-1/2 top-5 flex justify-center gap-x-6 md:gap-x-16 font-bold text-lgmd:text-xl cursor-pointer py-8",
+        "absolute -translate-x-1/2 left-1/2 top-5 flex justify-center gap-x-6 md:gap-x-16 font-semibold text-lg md:text-xl cursor-pointer py-8",
         location.pathname === "/" ? "text-white" : "text-black"
       )}
     >
